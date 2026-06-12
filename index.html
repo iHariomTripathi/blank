@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>My To-Do</title>
+
+  <!-- PWA essentials -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#6c5ce7" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="My To-Do" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <header class="app-header">
+      <h1>My To-Do</h1>
+      <p class="date" id="todayDate"></p>
+    </header>
+
+    <form id="todoForm" class="add-form">
+      <input
+        type="text"
+        id="todoInput"
+        placeholder="Add a new task..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" aria-label="Add task">+</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Done</button>
+    </div>
+
+    <ul id="todoList" class="todo-list"></ul>
+
+    <p id="emptyState" class="empty-state">No tasks yet. Add one above! ✨</p>
+
+    <footer class="app-footer">
+      <span id="itemsLeft">0 items left</span>
+      <button id="clearCompleted">Clear completed</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
